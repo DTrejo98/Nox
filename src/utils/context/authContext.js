@@ -3,7 +3,9 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { firebase } from '@/utils/client';
+import { onAuthStateChanged } from 'firebase/auth'; // Import modular functions
+
+import { auth } from '@/utils/client'; // Import auth from client.js
 
 const AuthContext = createContext();
 
@@ -18,22 +20,24 @@ function AuthProvider(props) {
   // an object/value = user is logged in
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((fbUser) => {
+    // Replace firebase.auth() with getAuth() for Firebase v9+
+    const unsubscribe = onAuthStateChanged(auth, (fbUser) => {
+      // Use onAuthStateChanged from the modular SDK
       if (fbUser) {
         setUser(fbUser);
       } else {
         setUser(false);
       }
-    }); // creates a single global listener for auth state changed
+    });
+
+    // Cleanup listener on unmount
+    return () => unsubscribe();
   }, []);
 
   const value = useMemo(
-    // https://reactjs.org/docs/hooks-reference.html#usememo
     () => ({
       user,
-      userLoading: user === null,
-      // as long as user === null, will be true
-      // As soon as the user value !== null, value will be false
+      userLoading: user === null, // as long as user === null, will be true
     }),
     [user],
   );
