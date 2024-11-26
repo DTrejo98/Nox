@@ -12,10 +12,11 @@ export default function EditSleepLog({ params }) {
   useEffect(() => {
     getSingleSleepLog(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
-  console.log(params);
   return <SleepLogForm obj={editItem} />;
 }
 
 EditSleepLog.propTypes = {
-  params: PropTypes.objectOf.isRequired,
+  params: PropTypes.shape({
+    firebaseKey: PropTypes.string.isRequired, // Expect firebaseKey as a string
+  }).isRequired,
 };
