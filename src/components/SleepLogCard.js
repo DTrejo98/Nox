@@ -11,7 +11,7 @@ function SleepLogCard({ sleeplogObj, onUpdate }) {
   // FOR DELETE, WE NEED TO REMOVE THE sleeplog AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
   const deleteThissleeplog = () => {
-    if (window.confirm(`Delete ${sleeplogObj.Date} entry?`)) {
+    if (window.confirm(`Delete ${sleeplogObj.date} entry?`)) {
       deleteSleepLog(sleeplogObj.firebaseKey).then(() => onUpdate());
     }
   };
@@ -19,7 +19,7 @@ function SleepLogCard({ sleeplogObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <Card.Title>{sleeplogObj.Date}</Card.Title>
+        <Card.Title>{sleeplogObj.date}</Card.Title>
 
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <Link href={`/sleeplog/edit/${sleeplogObj.firebaseKey}`} passHref>
@@ -35,7 +35,7 @@ function SleepLogCard({ sleeplogObj, onUpdate }) {
 
 SleepLogCard.propTypes = {
   sleeplogObj: PropTypes.shape({
-    Date: PropTypes.string,
+    date: PropTypes.string,
     sleepStart: PropTypes.string,
     sleepEnd: PropTypes.string,
     firebaseKey: PropTypes.string,
