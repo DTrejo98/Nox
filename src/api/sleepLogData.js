@@ -53,7 +53,7 @@ const getSingleSleepLog = (firebaseKey) =>
   });
 
 // FIXME: DELETE SleepLog
-const deleteSingleSleepLog = (firebaseKey) =>
+const deleteSleepLog = (firebaseKey) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/sleeplog/${firebaseKey}.json`, {
       method: 'DELETE',
@@ -112,4 +112,4 @@ const getSleepLogQuality = (firebaseKey) =>
 //       .catch(reject);
 //   });
 
-export { getSleepLog, createSleepLog, getSingleSleepLog, deleteSingleSleepLog, updateSleepLog, getSleepLogQuality };
+export { getSleepLog, createSleepLog, getSingleSleepLog, deleteSleepLog, updateSleepLog, getSleepLogQuality };
