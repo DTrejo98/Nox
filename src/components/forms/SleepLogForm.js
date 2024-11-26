@@ -41,7 +41,6 @@ function SleepLogForm({ obj = initialState }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      console.log('Updating sleeplog with data:', formInput);
       updateSleepLog(formInput).then(() => router.push(`/sleeplog/`));
     } else {
       const payload = { ...formInput, uid: user.uid };
@@ -60,17 +59,17 @@ function SleepLogForm({ obj = initialState }) {
 
       {/* FIRST NAME INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Date" className="mb-3">
-        <Form.Control type="text" placeholder="Enter date" name="date" value={formInput.date} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter date" name="date" value={formInput.date || ''} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* FIRST NAME INPUT  */}
       <FloatingLabel controlId="floatingInput2" label="Sleep Start Time" className="mb-3">
-        <Form.Control type="text" placeholder="Enter sleep start time" name="sleepStart" value={formInput.sleepStart} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter sleep start time" name="sleepStart" value={formInput.sleepStart || ''} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* LAST NAME INPUT  */}
       <FloatingLabel controlId="floatingInput3" label="Sleep End Time" className="mb-3">
-        <Form.Control type="text" placeholder="Enter sleep end time" name="sleepEnd" value={formInput.sleepEnd} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter sleep end time" name="sleepEnd" value={formInput.sleepEnd || ''} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* SUBMIT BUTTON  */}
