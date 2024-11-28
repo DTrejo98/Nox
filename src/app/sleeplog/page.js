@@ -6,23 +6,39 @@ import { Button } from 'react-bootstrap';
 import { useAuth } from '@/utils/context/authContext';
 import { getSleepLog } from '../../api/sleepLogData';
 import SleepLogCard from '../../components/SleepLogCard';
+import getQuality from '../../api/sleepQualityData';
 
 function AuthorPage() {
-  // TODO: Set a state for books
   const [sleepLog, setSleepLog] = useState([]);
-
-  // TODO: Get user ID using useAuth Hook
+  const [quality, setQuality] = useState([]);
   const { user } = useAuth();
 
-  // TODO: create a function that makes the API call to get all the books
+  // Fetch sleep log and quality data
   const getAllSleepLog = () => {
     getSleepLog(user.uid).then(setSleepLog);
+    getQuality().then(setQuality);
   };
-  console.log(user.uid);
-  // TODO: make the call to the API to get all the books on component render
+
   useEffect(() => {
     getAllSleepLog();
-  }, []);
+  }, []); // Empty array ensures this runs once when the component mounts
+
+  // Combine both sleep log and quality data if needed
+  const combineData = () => {
+    const combined = [];
+
+    sleepLog.forEach((sleepEntry) => {
+      const associatedQuality = quality.find((qualityEntry) => qualityEntry.firebaseKey === sleepEntry.qualityId);
+      const qualityEntry = associatedQuality || {};
+
+      combined.push({
+        ...sleepEntry,
+        quality: qualityEntry,
+      });
+    });
+
+    return combined;
+  };
 
   return (
     <div className="text-center my-4">
@@ -30,9 +46,8 @@ function AuthorPage() {
         <Button>Add Sleep Log Entry</Button>
       </Link>
       <div className="d-flex flex-wrap">
-        {/* TODO: map over books here using BookCard component */}
-        {sleepLog.map((sleeplog) => (
-          <SleepLogCard key={sleeplog.firebaseKey} sleeplogObj={sleeplog} onUpdate={getAllSleepLog} />
+        {combineData().map((entry) => (
+          <SleepLogCard key={entry.firebaseKey} sleeplogObj={entry} qualityObj={entry.quality} onUpdate={getAllSleepLog} />
         ))}
       </div>
     </div>

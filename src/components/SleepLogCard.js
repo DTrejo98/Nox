@@ -7,19 +7,23 @@ import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { deleteSleepLog } from '../api/sleepLogData';
 
-function SleepLogCard({ sleeplogObj, onUpdate }) {
-  // FOR DELETE, WE NEED TO REMOVE THE sleeplog AND HAVE THE VIEW RERENDER,
-  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
+function SleepLogCard({ sleeplogObj, qualityObj, onUpdate }) {
   const deleteThissleeplog = () => {
     if (window.confirm(`Delete ${sleeplogObj.date} entry?`)) {
       deleteSleepLog(sleeplogObj.firebaseKey).then(() => onUpdate());
     }
   };
-  console.log(sleeplogObj);
+
+  console.log(qualityObj);
+
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <Card.Title>{sleeplogObj.date}</Card.Title>
+        <p className="card-text bold">
+          {sleeplogObj.sleepStart} - {sleeplogObj.sleepEnd}
+        </p>
+        <p className="card-text bold">{qualityObj.type}</p>
 
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <Link href={`/sleeplog/edit/${sleeplogObj.firebaseKey}`} passHref>
@@ -38,7 +42,12 @@ SleepLogCard.propTypes = {
     date: PropTypes.string,
     sleepStart: PropTypes.string,
     sleepEnd: PropTypes.string,
+    qualityId: PropTypes.string,
     firebaseKey: PropTypes.string,
+  }),
+  qualityObj: PropTypes.shape({
+    firebaseKey: PropTypes.string,
+    type: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
