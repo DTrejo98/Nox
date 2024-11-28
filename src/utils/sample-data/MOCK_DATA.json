@@ -1,58 +1,95 @@
 {
-"-OCeQ9VVuyKb_zmtdnhy":{
-    "date":"08/24/2024",
-    "sleepStart":"1:11 PM",
-    "sleepEnd":"6:50 PM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9VVuyKb_zmtdnhy"},
-"-OCeQ9VXKWOZHg7KpJWt":{
-    "date":"05/06/2024",
-    "sleepStart":"3:07 PM",
-    "sleepEnd":"8:12 AM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9VXKWOZHg7KpJWt"},
-"-OCeQ9VY6cFBjnXTTQA1":{
-    "date":"08/11/2024",
-    "sleepStart":"2:44 PM",
-    "sleepEnd":"3:41 PM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9VY6cFBjnXTTQA1"},
-"-OCeQ9VZ2vB4uDCvMl4U":{
-    "date":"08/23/2024",
-    "sleepStart":"8:43 AM",
-    "sleepEnd":"5:27 AM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9VZ2vB4uDCvMl4U"},
-"-OCeQ9VZ2vB4uDCvMl4V":{
-    "date":"12/06/2023",
-    "sleepStart":"4:37 AM",
-    "sleepEnd":"7:53 AM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9VZ2vB4uDCvMl4V"},
-"-OCeQ9Va3S0Es9Fhn3mx":{
-    "date":"03/17/2024",
-    "sleepStart":"12:08 AM",
-    "sleepEnd":"12:36 PM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9Va3S0Es9Fhn3mx"},
-"-OCeQ9Va3S0Es9Fhn3my":{
-    "date":"01/11/2024",
-    "sleepStart":"1:20 PM",
-    "sleepEnd":"4:33 PM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9Va3S0Es9Fhn3my"},
-"-OCeQ9VbchAg3-qvrkXK":{
-    "date":"04/17/2024",
-    "sleepStart":"6:13 AM",
-    "sleepEnd":"3:59 PM",
-    "uid":"i9kePbjA4meJMtMGzqXxxP7xbW42",
-    "quality":null,
-    "firebaseKey":"-OCeQ9VbchAg3-qvrkXK"}
-}
+    "quality": {
+      "-OCfNjBGVurVP0ajnkFD": {
+        "firebaseKey": "-OCfNjBGVurVP0ajnkFD",
+        "type": "Great"
+      },
+      "-OCfNjBGVurVP0ajnkFE": {
+        "firebaseKey": "-OCfNjBGVurVP0ajnkFE",
+        "type": "Good"
+      },
+      "-OCfNjBGVurVP0ajnkFF": {
+        "firebaseKey": "-OCfNjBGVurVP0ajnkFF",
+        "type": "Decent"
+      },
+      "-OCfNjBHkzCD_oQ6Q2-9": {
+        "firebaseKey": "-OCfNjBHkzCD_oQ6Q2-9",
+        "type": "Bad"
+      }
+    },
+    "sleeplog": {
+      "-OCeQ9VVuyKb_zmtdnhy": {
+        "date": "08/24/2024",
+        "firebaseKey": "-OCeQ9VVuyKb_zmtdnhy",
+        "qualityId": "-OCfNjBGVurVP0ajnkFD",
+        "sleepEnd": "6:50 PM",
+        "sleepStart": "1:11 PM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCeQ9VXKWOZHg7KpJWt": {
+        "date": "05/06/2024",
+        "firebaseKey": "-OCeQ9VXKWOZHg7KpJWt",
+        "qualityId": "-OCfNjBGVurVP0ajnkFD",
+        "sleepEnd": "8:12 AM",
+        "sleepStart": "3:07 PM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCeQ9VY6cFBjnXTTQA1": {
+        "date": "08/11/2024",
+        "firebaseKey": "-OCeQ9VY6cFBjnXTTQA1",
+        "qualityId": "-OCfNjBGVurVP0ajnkFE",
+        "sleepEnd": "3:52 PM",
+        "sleepStart": "2:33 PM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCeQ9VZ2vB4uDCvMl4U": {
+        "date": "08/23/2024",
+        "firebaseKey": "-OCeQ9VZ2vB4uDCvMl4U",
+        "qualityId": "-OCfNjBGVurVP0ajnkFE",
+        "sleepEnd": "5:27 AM",
+        "sleepStart": "8:43 AM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCeQ9VZ2vB4uDCvMl4V": {
+        "date": "12/06/2023",
+        "firebaseKey": "-OCeQ9VZ2vB4uDCvMl4V",
+        "qualityId": "-OCfNjBGVurVP0ajnkFF",
+        "sleepEnd": "7:53 AM",
+        "sleepStart": "4:26 AM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCeQ9Va3S0Es9Fhn3mx": {
+        "date": "03/17/2024",
+        "firebaseKey": "-OCeQ9Va3S0Es9Fhn3mx",
+        "qualityId": "-OCfNjBGVurVP0ajnkFF",
+        "sleepEnd": "12:36 PM",
+        "sleepStart": "12:08 AM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCeQ9VbchAg3-qvrkXK": {
+        "date": "04/17/2024",
+        "firebaseKey": "-OCeQ9VbchAg3-qvrkXK",
+        "qualityId": "-OCfNjBHkzCD_oQ6Q2-9",
+        "sleepEnd": "3:59 PM",
+        "sleepStart": "6:13 AM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCecbSNfcUHE4Xc5zXt": {
+        "date": "11/26/2024",
+        "firebaseKey": "-OCecbSNfcUHE4Xc5zXt",
+        "qualityId": "-OCfNjBHkzCD_oQ6Q2-9",
+        "sleepEnd": "6:00 AM",
+        "sleepStart": "9:00 PM",
+        "sleep_start": "a",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      },
+      "-OCecy5US62Y9Kgqf4Iw": {
+        "date": "11/30/2024",
+        "firebaseKey": "-OCecy5US62Y9Kgqf4Iw",
+        "qualityId": "-OCfNjBHkzCD_oQ6Q2-9",
+        "sleepEnd": "6:30 AM",
+        "sleepStart": "9:30 PM",
+        "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
+      }
+    }
+  }

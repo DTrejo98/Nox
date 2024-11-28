@@ -95,21 +95,4 @@ const getSleepLogQuality = (firebaseKey) =>
       .catch(reject);
   });
 
-// // TODO: FILTER A FAVORITE SleepLog'S BOOKS
-// const favoriteSleepLog = (uid) =>
-//   new Promise((resolve, reject) => {
-//     fetch(`${endpoint}/sleeplog.json?orderBy="uid"&equalTo="${uid}"`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         const favoriteSleepLog = Object.values(data).filter((item) => item.favorite);
-//         resolve(favoriteSleepLog);
-//       })
-//       .catch(reject);
-//   });
-
 export { getSleepLog, createSleepLog, getSingleSleepLog, deleteSleepLog, updateSleepLog, getSleepLogQuality };

@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable react/no-unused-prop-types */
 
 'use client';
@@ -10,25 +11,28 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createSleepLog, updateSleepLog } from '../../api/sleepLogData';
+import getQuality from '../../api/sleepQualityData';
 
 const initialState = {
   date: '',
   sleepStart: '',
   sleepEnd: '',
-  quality: '',
+  qualityId: '',
   firebaseKey: '',
 };
 
 function SleepLogForm({ obj = initialState }) {
   const [formInput, setFormInput] = useState(obj);
+  const [quality, setQuality] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
-    if (obj.firebaseKey) {
-      setFormInput(obj); // Ensure obj has the necessary data
-    }
-  }, [obj]);
+    getQuality().then(setQuality);
+    console.log(quality);
+
+    if (obj.firebaseKey) setFormInput(obj);
+  }, [obj, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -72,6 +76,17 @@ function SleepLogForm({ obj = initialState }) {
         <Form.Control type="text" placeholder="Enter sleep end time" name="sleepEnd" value={formInput.sleepEnd || ''} onChange={handleChange} required />
       </FloatingLabel>
 
+      <FloatingLabel controlId="floatingSelect" label="Author">
+        <Form.Select aria-label="Quality" name="qualityId" onChange={handleChange} className="mb-3" value={formInput.qualityId || ''} required>
+          <option value="">Select Quality</option>
+          {quality.map((quality) => (
+            <option key={quality.firebaseKey} value={quality.firebaseKey}>
+              {quality.type}
+            </option>
+          ))}
+        </Form.Select>
+      </FloatingLabel>
+
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Sleep Log Entry</Button>
     </Form>
@@ -85,7 +100,7 @@ SleepLogForm.propTypes = {
     sleepEnd: PropTypes.string,
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
-    quality: PropTypes.string,
+    qualityId: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
