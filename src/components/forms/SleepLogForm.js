@@ -51,7 +51,7 @@ function SleepLogForm({ obj = initialState }) {
       createSleepLog(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateSleepLog(patchPayload).then(() => {
-          router.push('/');
+          router.push('/sleeplog/');
         });
       });
     }
@@ -76,7 +76,7 @@ function SleepLogForm({ obj = initialState }) {
         <Form.Control type="text" placeholder="Enter sleep end time" name="sleepEnd" value={formInput.sleepEnd || ''} onChange={handleChange} required />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingSelect" label="Author">
+      <FloatingLabel controlId="floatingSelect" label="Quality">
         <Form.Select aria-label="Quality" name="qualityId" onChange={handleChange} className="mb-3" value={formInput.qualityId || ''} required>
           <option value="">Select Quality</option>
           {quality.map((quality) => (
