@@ -1,71 +1,32 @@
 
+<br/>
+<div align="center">
 
-<h1 align="center" style="font-weight: bold;">Nox</h1>
-
+<h3 align="center">Nox</h3>
 <p align="center">
-<a href="#tech">Technologies</a>
-<a href="#started">Getting Started</a>
-<a href="#colab">Collaborators</a>
-<a href="#contribute">Contribute</a> 
+Better Sleep Awaits
+
+<br/>
+<br/>
+<a href="https://www.loom.com/share/0ddb8b08ec20461b989e784928232e6d?sid=0d5eaba3-2634-4dc3-aa73-a5e07c836c8b">View Demo .</a>  
+
+
 </p>
+</div>
 
+## About The Project
 
-<p align="center">Sleep optimization app. Better Sleep Awaits</p>
+This is a sleep helper app. This app is intended for those of us who love getting a great night's rest, but just can't seem to get it. This app helps facilitate getting that much needed rest while being able to keep as much focus on our busy days as much as possible.
 
+# Quick Start Demo
 
-<p align="center">
-<a href="https://github.com/DTrejo98/Nox">📱 Visit this Project</a>
-</p>
+[WireFrame](https://drive.google.com/file/d/1T82Wf3pcSC4OSuBToVeKPstrl0h6TzQ2/view)
 
-<h2 id="layout">🎨 Layout</h2>
+[Project Board](https://github.com/users/DTrejo98/projects/8)
 
-<p align="center">
+[Try it out!](https://noxsleep.netlify.app/)
 
-<img src="" alt="" width="400px">
-</p>
+# Usage
 
-<h2 id="technologies">💻 Technologies</h2>
+As of now, you are able to manage your sleep log so that you can track your sleep and see where it needs work.
 
-- React
-- Next.js
-
-<h3>Prerequisites</h3>
-
-Here you list all prerequisites necessary for running your project. For example:
-
-- [NodeJS](https://github.com/)
-- [Git](https://github.com/)
-- VSCode
-
-
-<h3>Cloning</h3>
-
-How to clone your project
-
-```bash
-git clone git@github.com:DTrejo98/Nox.git
-```
-
-<h3>Starting</h3>
-
-How to start your project
-
-```bash
-cd Nox
-npm install
-npm run prepare
-npm run dev
-```
-
-<h2 id="contribute">📫 Contribute</h2>
-
-1. `git clone https://github.com/Fernanda-Kipper/text-editor.git`
-2. `git checkout -b feature/NAME`
-3. Follow commit patterns
-4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
-
-<h3>Documentations that might help</h3>
-
-[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
-
-[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
