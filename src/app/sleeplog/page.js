@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '@/utils/context/authContext';
 import { getSleepLog } from '../../api/sleepLogData';
-import SleepLogCard from '../../components/SleepLogCard';
 import getQuality from '../../api/sleepQualityData';
+import SleepLogCard from '../../components/Cards/SleepLogCard';
 
-function AuthorPage() {
+function SleeplogPage() {
   const [sleepLog, setSleepLog] = useState([]);
   const [quality, setQuality] = useState([]);
   const { user } = useAuth();
@@ -54,4 +54,4 @@ function AuthorPage() {
   );
 }
 
-export default AuthorPage;
+export default SleeplogPage;
