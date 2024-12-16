@@ -91,5 +91,28 @@
         "sleepStart": "9:30 PM",
         "uid": "i9kePbjA4meJMtMGzqXxxP7xbW42"
       }
-    }
+    },
+    "routines": {
+      "-OEGY-LleLGdj-IlIhLZ":{
+          "routine_name":"Gembucket",
+          "task1":"hub",
+          "task2":"algorithm",
+          "task3":"Exclusive",
+          "task4":"Customer-focused",
+          "task5":"policy"},
+      "-OEGY-Lmhp8CGJWrMYD2":{
+          "routine_name":"Quo Lux",
+          "task1":"Object-based",
+          "task2":"Object-based",
+          "task3":"Multi-tiered",
+          "task4":"concept",
+          "task5":"discrete"},
+      "-OEGY-LnhvzTdba9JbFI":{
+          "routine_name":"Opela",
+          "task1":"optimal",
+          "task2":"actuating",
+          "task3":"approach",
+          "task4":"array",
+          "task5":"cohesive"}
+      }
   }

@@ -21,6 +21,9 @@ export default function NavBar() {
             <Link className="nav-link" href="/sleeplog">
               Sleep Log
             </Link>
+            <Link className="nav-link" href="/routine">
+              Sleep Routines
+            </Link>
           </Nav>
 
           <Button variant="danger" onClick={signOut}>

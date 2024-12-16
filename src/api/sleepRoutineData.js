@@ -1,12 +1,12 @@
 import { clientCredentials } from '../utils/client';
-// API CALLS FOR SleepLog
+// API CALLS FOR Routine
 
 const endpoint = clientCredentials.databaseURL;
 
-// FIXME:  GET ALL SleepLog
-const getSleepLog = (uid) =>
+// FIXME:  GET ALL Routines
+const getRoutine = (uid) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/sleeplog.json?orderBy="uid"&equalTo="${uid}"`, {
+    fetch(`${endpoint}/routine.json?orderBy="uid"&equalTo="${uid}"`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -23,10 +23,10 @@ const getSleepLog = (uid) =>
       .catch(reject);
   });
 
-// FIXME: CREATE SleepLog
-const createSleepLog = (payload) =>
+// FIXME: CREATE SleepRoutine
+const createRoutine = (payload) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/sleeplog.json`, {
+    fetch(`${endpoint}/routine.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,10 +38,10 @@ const createSleepLog = (payload) =>
       .catch(reject);
   });
 
-// FIXME: GET SINGLE SleepLog
-const getSingleSleepLog = (firebaseKey) =>
+// FIXME: GET SINGLE Routine
+const getSingleRoutine = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/sleeplog/${firebaseKey}.json`, {
+    fetch(`${endpoint}/routine/${firebaseKey}.json`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -52,10 +52,10 @@ const getSingleSleepLog = (firebaseKey) =>
       .catch(reject);
   });
 
-// FIXME: DELETE SleepLog
-const deleteSleepLog = (firebaseKey) =>
+// FIXME: DELETE Routine
+const deleteRoutine = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/sleeplog/${firebaseKey}.json`, {
+    fetch(`${endpoint}/routine/${firebaseKey}.json`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -66,10 +66,10 @@ const deleteSleepLog = (firebaseKey) =>
       .catch(reject);
   });
 
-// FIXME: UPDATE SleepLog
-const updateSleepLog = (payload) =>
+// FIXME: UPDATE Routine
+const updateRoutine = (payload) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/sleeplog/${payload.firebaseKey}.json`, {
+    fetch(`${endpoint}/routine/${payload.firebaseKey}.json`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -81,18 +81,4 @@ const updateSleepLog = (payload) =>
       .catch(reject);
   });
 
-// TODO: GET A SINGLE SleepLog's quality
-const getSleepLogQuality = (firebaseKey) =>
-  new Promise((resolve, reject) => {
-    fetch(`${endpoint}/quality.json?orderBy="sleeplog_id"&equalTo="${firebaseKey}"`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => resolve(data))
-      .catch(reject);
-  });
-
-export { getSleepLog, createSleepLog, getSingleSleepLog, deleteSleepLog, updateSleepLog, getSleepLogQuality };
+export { getRoutine, createRoutine, getSingleRoutine, deleteRoutine, updateRoutine };
