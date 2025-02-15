@@ -19,9 +19,14 @@ function RoutineCard({ routineObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{routineObj.routine_name}</Card.Title>
 
-        {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
+        {/* DYNAMIC LINK TO EDIT THE ROUTINE DETAILS  */}
         <Link href={`/routine/edit/${routineObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
+        </Link>
+        <Link href={`/routine/view/${routineObj.firebaseKey}`} passHref>
+          <Button variant="primary" className="m-2">
+            VIEW
+          </Button>
         </Link>
         <Button variant="danger" onClick={deleteThisRoutine} className="m-2">
           DELETE
